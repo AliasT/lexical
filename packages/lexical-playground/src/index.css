@@ -8,6 +8,11 @@
 
 @import 'https://fonts.googleapis.com/css?family=Reenie+Beanie';
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular',
@@ -15,12 +20,18 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #eee;
-  padding: 0 20px;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 header {
-  max-width: 580px;
-  margin: auto;
+  width: 100%;
+  /* margin: auto; */
+  align-self: center;
   position: relative;
   display: flex;
   justify-content: center;
@@ -46,9 +57,12 @@ header h1 {
 }
 
 .editor-shell {
-  margin: 20px auto;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
   border-radius: 2px;
-  max-width: 1100px;
+
   color: #000;
   position: relative;
   line-height: 1.7;
@@ -58,9 +72,13 @@ header h1 {
 .editor-shell .editor-container {
   background: #fff;
   position: relative;
-  display: block;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  min-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  /* border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px; */
+  flex: 1;
 }
 
 .editor-shell .editor-container.tree-view {
@@ -68,14 +86,15 @@ header h1 {
 }
 
 .editor-shell .editor-container.plain-text {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  /* border-top-left-radius: 10px;
+  border-top-right-radius: 10px; */
 }
 
 .editor-scroller {
   min-height: 150px;
   border: 0;
   display: flex;
+  flex: 1;
   position: relative;
   outline: 0;
   z-index: 0;
@@ -84,7 +103,9 @@ header h1 {
 }
 
 .editor {
-  flex: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   position: relative;
   resize: vertical;
   z-index: -1;
@@ -1431,12 +1452,11 @@ button.action-button:disabled {
 }
 
 .toolbar {
+  border-bottom: solid 1px #ddd;
   display: flex;
-  margin-bottom: 1px;
+  justify-content: center;
   background: #fff;
   padding: 4px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
   vertical-align: middle;
   overflow: auto;
   height: 36px;

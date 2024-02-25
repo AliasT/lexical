@@ -8,6 +8,7 @@
  */
 .ContentEditable__root {
   border: 0;
+  /* flex: 1; */
   font-size: 15px;
   display: block;
   position: relative;

@@ -942,7 +942,7 @@ export default function CommentPlugin({
           />,
           document.body,
         )}
-      {activeAnchorKey !== null &&
+      {/* {activeAnchorKey !== null &&
         activeAnchorKey !== undefined &&
         !showCommentInput &&
         createPortal(
@@ -963,7 +963,7 @@ export default function CommentPlugin({
           <i className="comments" />
         </Button>,
         document.body,
-      )}
+      )} */}
       {showComments &&
         createPortal(
           <CommentsPanel
